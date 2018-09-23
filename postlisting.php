@@ -23,15 +23,15 @@
         text-align: center;
       }
     </style>
-    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css">
   </head>
   <body>
     <div class="well well-lg" ><h2>Posting Advertisement</h2></div>
-    <select name="propertytype" onchange="tbshow()">
-    
+    <select name="propertytype" onchange="tbshow()" class="form-select">    
     
     <div id="forminfo">
       <form>
+       
           <option name="flat" value="Flat">Flat</option>
           <option name="house" value="house">House</option>
           <option name="other" value="other" >Other</option>
@@ -47,6 +47,7 @@
     </div>
     
     <div id="map"></div>
+
   
     <script>
       // Note: This example requires that you consent to location sharing when
