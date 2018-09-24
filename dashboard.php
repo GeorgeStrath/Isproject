@@ -11,15 +11,16 @@
     <script></script>
 </head>
 <body>
-    <div class="jumbotron" style="background-color:blue; color:white;"><h2>Dashboard<a href="postlisting.php">
+    <div class="row container-fluid" style="background-color:blue; color:white;"><h2>Dashboard<a href="postlisting.php">
         <span class="glyphicon glyphicon-plus" style="float:right; font-size:20px; margin-bottom:30px;"> </span></a></h2>
     
     </div>
+    <br>
         
     <div class="row">
         <div class="col-md-4">
             <div class="card">                
-                <div class="card-body"><center><i class="fa fa-home"></i></center></div>
+                <div class="card-body"><center><i class="fa fa-home" style="font-size: 36px;"></i></center></div>
                 <div class="card-footer">Number of houses uploaded:</div>
                 
             </div>
