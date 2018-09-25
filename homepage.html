@@ -6,13 +6,13 @@
 		#bgimage{
 
 			background: url(images/homescreen.jpg);
-			background-size: auto;
-			width: 1385px;
+			background-size: 1366px;			
 			background-repeat: no-repeat;
 			background-position: center;
-			height:720px ;
+			height:730px;
 			position: fixed;
-			opacity: 1;
+			margin-left: 15px;
+			
 				
 
 		}
@@ -36,14 +36,21 @@
 <body>
 	
 	<div  class="row">
-		<div id="bgimage" class="col-md-12" >
-			    <a href="login.html" style=" float:right; text-decoration: none; font-size: 18px; ">Login</a>
-			<div class="row " id="click" >
+		<div id="bgimage" class="col" >
+				<a href="login.php" style=" float:right; text-decoration: none; font-size: 18px; ">Login</a>
 				<center>
-				<div class="col-md-6"><a href="advcheckin.php"><button class="" id="go" ><h2>Become a host</h2></button></a> </div>
-				<div class="col-md-6"><a href="stucheckin.html"><button class="" id="go" ><h2>Welcome Home</h2></button></a></div>
+				<div class="row" id="click">
+						<div class="col" ><a href="stucheckin.php">
+							<button class="btn btn-danger"><h2>Student</h2></button>
+						</a>
+					</div>
+						<div class="col">
+								<a href="advcheckin.php">
+										<button class="btn btn-danger"><h2>Advertiser</h2></button>
+									</a></div>
+						
+				 </div>
 				</center>
-			</div>
 		
 			
 			

@@ -26,19 +26,18 @@
 
 <body>
     <center>
+        
 <div id="sform">
-        <h2>Sign Up</h2>
+        <h2>Login</h2>
         <div id="uform">
-    <form method="POST" action="signup.php">
+    <form method="POST" action="selectadv.php">
      
-        Firstname :<br> <input type="text"  name="fname" placeholder="Enter your firstname" class="form-control" ><br><br>
-        Lastname :<br> <input type="text" name="lname" placeholder="Enter your lastname" class="form-control"><br><br>
-        Email Address :<br> <input type="text" name="mail" placeholder="Enter your email address" class="form-control"><br><br>
-        ID Number :<br> <input type="number" name="inum" placeholder="Enter  your id number" class="form-control" ><br><br>
+  
+        Email Address :<br> <input type="text" name="mail" placeholder="Enter your email address" class="form-control"><br>        
         Password :<br> <input type="password" name="pass" placeholder="Enter your password" class="form-control"><br><br>
-        Re-type Password :<br> <input type="password" placeholder="Retype your password" class="form-control" ><br><br>
-        Admission Letter : <input type="file"><br>
-        <input type="submit" style="float:right; margin-right:10px;" class="btn btn-info" value="Sign Up" ><br><br>
+        
+        
+        <input type="submit" style="float:right; margin-right:10px;" class="btn btn-info" value="login" ><br><br>
 
 
     </form>
