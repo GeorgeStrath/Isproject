@@ -14,19 +14,24 @@
         margin-left: 100px;
         margin-right: 320px;        
         box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3); 
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
         }
         #stud2{
          margin-top: 120px;
         margin-bottom: 120px;
         margin-right: 150px;        
-        box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);     
+        box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
         }
     </style>
 </head>
 <body>
+
     <div class="row">
         <div class="col" id="stud">
-                <form method="POST" action="signup.php">
+                <form method="POST" action="selectstu.php">
      
                         <h3>Students</h3>
                         Email Address :<br> <input type="text" name="mail" placeholder="Enter your email address" class="form-control"><br>                        
@@ -40,14 +45,14 @@
         </div>
 
         <div class="col" id="stud2" >
-                <form method="POST" action="signup.php">     
+                <form method="POST" action="selectadv.php">     
                             <h3>Advertiser</h3>
                         Email Address :<br> <input type="text" name="mail" placeholder="Enter your email address" class="form-control">
                         <br>                        
                         Password :<br> <input type="password" name="pass" placeholder="Enter your password" class="form-control">
                         <br><br>                        
                         
-                        <input type="submit" style="text-align: center; margin-right:10px;" class="btn btn-info" value="login" ><br><br>
+                        <input type="submit" style="float:right;" class="btn btn-info" value="login" ><br><br>
                         Don't have an account?<a href="advcheckin.php"> Sign up</a>
                 
                     </form>

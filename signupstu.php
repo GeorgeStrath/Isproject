@@ -9,7 +9,7 @@ $lname=$_POST['lname'];
 $mail=$_POST['mail'];
 $idnum=$_POST['idnum'];
 $pwd=$_POST['pwd'];
-$pass=password_hash($pwd,PASSWORD_BCRYPT);
+$pass=password_hash($pwd,PASSWORD_DEFAULT);
 
 $sql="INSERT INTO  student ( firstname,  lastname,  email,  idno,  password,  admissionletter) VALUES ('$fname', '$lname', '$mail', '$idnum', '$pass', '$target_file')";
 
