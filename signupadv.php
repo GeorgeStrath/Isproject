@@ -1,5 +1,5 @@
 <?php
-
+$msg="";
 $conn=mysqli_connect("localhost","root","","isproject");
 $target_dir="advcert/";
 $target_file=$target_dir.basename($_FILES["filetoupload"]["name"]);
