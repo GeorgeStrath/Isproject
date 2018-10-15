@@ -1,37 +1,33 @@
 <?php
-session_start();
-$conn=mysqli_connect('localhost','root','','isproject');
-$mail=$_POST['mail'];
-$pwd=$_POST['pass'];
 
-$sql="SELECT password FROM student WHERE email='$mail' ";
+    session_start();
+    $conn=mysqli_connect('localhost','root','','isproject');
 
-$result=mysqli_query($conn,$sql);
+    $email=$_POST['mail'];
+    $pwd=$_POST['pass'];
 
-if(mysqli_num_rows($result)>0)
-{
-    if ($row=mysqli_fetch_assoc($result)) {
+    $sql="SELECT password, stuid FROM student WHERE email='$email' ";
+
+    $result=mysqli_query($conn,$sql);
+
+if (mysqli_num_rows($result)>0) {
         # code...
-        $row0=$row['password'];
-        $check=password_verify($pwd,$row0);
+ 
 
-        if($check==1)
-        {
-            $_SESSION['user']=$mail;
-            header('Location:dashboard.php');
-        }
-        else
-        {
-            session_destroy();            
-            
-        }
+    if ($row=mysqli_fetch_assoc($result)) {
 
+        # code...
+        $pass=$row['password'];
+        $_SESSION['stuid']=$row['stuid'];
+        echo $row['stuid'].$pwd;
+        if (password_verify($pwd,$pass)) {
+            # code...
+            header('Location:stuhomepage.php');
+        }
+        else{
+            session_destroy();
+            echo'lol';
+        }
     }
-
-
-}
-else
-{
-    session_destroy();
 }
 

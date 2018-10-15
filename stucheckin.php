@@ -42,7 +42,7 @@
         Admission Letter : <input type="file" name="filetoupload" id="filetoupload" ><br>
         <input type="submit" style="float:right; margin-right:10px;" class="btn btn-info" value="Sign Up" ><br><br>
 
-        <h6>Already have an account? <a href="loginstu.php">Login</a></h6>
+        <h6>Already have an account? <a href="login.php">Login</a></h6>
     </form>
 </div>
 </div>

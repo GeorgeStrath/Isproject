@@ -23,17 +23,16 @@ if(mysqli_num_rows($result)>0)
             header('Location:dashboard.php');
         }
         else
-        {
+        {   header('Location:login.php');
             session_destroy();            
             
         }
 
     }
-
-
 }
 else
 {
+    header('Location:loginadv.php');
     session_destroy();
 }
 

@@ -39,16 +39,11 @@
         Re-type Password :<br> <input type="password" placeholder="Retype your password" name="pass" class="form-control" ><br><br>
         Certificate file : <input type="file" name="filetoupload" id="filetoupload" ><br>
         <input type="submit" style="float:right; margin-right:10px;" class="btn btn-info" value="Sign Up" name="submit"><br><br>
-        Already have an account <a href="loginadv.php">Login </a>
+        Already have an account <a href="login.php">Login </a>
 
     </form>
 </div>
 </div>
 </center>
 </body>
-<script src="jquery-3.3.1.js"></script>
-<script>
-$('#idnum').val('');
-
-</script>
 </html>

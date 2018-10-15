@@ -45,7 +45,7 @@
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
-            zoom: 10
+            zoom: 15
           });
           infoWindow = new google.maps.InfoWindow;
   
@@ -124,6 +124,13 @@
           
   
         </textarea><br>
+        <label for="comment">Location: <span style="font-size: 12px;"> (Be as specific as possible)</span></label>
+        <textarea class="form-control" rows="3"  placeholder="List the ammenities provided " name="location" >
+          
+  
+        </textarea><br>
+
+
         Are the amenities bill included in the rent?<br>
         
           <label><input type="radio" name="billtype" class="radio-inline" value="yes">Yes</label> 

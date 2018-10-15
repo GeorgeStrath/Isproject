@@ -8,7 +8,7 @@ $fname=$_POST['fname'];
 $lname=$_POST['lname'];
 $mail=$_POST['mail'];
 $idnum=$_POST['idnum'];
-$pwd=$_POST['pwd'];
+$pwd=$_POST['pass'];
 $pass=password_hash($pwd,PASSWORD_DEFAULT);
 
 $sql="INSERT INTO  student ( firstname,  lastname,  email,  idno,  password,  admissionletter) VALUES ('$fname', '$lname', '$mail', '$idnum', '$pass', '$target_file')";
@@ -24,6 +24,7 @@ if (move_uploaded_file($_FILES['filetoupload']['tmp_name'],$target_file)) {
 }
 
 header('Location:stuhomepage.php');
+
 
 
 ?>
