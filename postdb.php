@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn=mysqli_connect('localhost','root','','isproject');
+ include'connect.php';
 $msg="";
 $advid=$_SESSION['advid'];
 $latitude=$_POST['latitude'];
@@ -17,7 +17,20 @@ $billtype=$_POST['billtype'];
 
 $rating=0;
 
-$sql="INSERT INTO listings(accommodationtype, vacancies, amenities,amenitiesincluded , rating, Category, cost, Advid, photo, location, lat, lng) VALUES ('$acctype','$vacancies','$amenities', '$billtype','$rating','$roomsize','$cost','$advid','$target_file','$location','$latitude','$longitude')";
+$query="SELECT * FROM advertiser WHERE advid='$advid' ";
+$result=mysqli_query($conn,$query);
+  if (mysqli_num_rows($result)==1) {
+	# code...
+	if ($row=mysqli_fetch_assoc($result)) {
+		# code...
+		$advfirstname=$row['firstname'];
+		$advlastname=$row['lastname'];
+	}
+
+}
+
+
+$sql="INSERT INTO listings(advfirstname,advlastname,accommodationtype, vacancies, amenities,amenitiesincluded , rating, Category, cost, Advid, photo, location, lat, lng) VALUES ('$advfirstname','$advlastname','$acctype','$vacancies','$amenities', '$billtype','$rating','$roomsize','$cost','$advid','$target_file','$location','$latitude','$longitude')";
 
 mysqli_query($conn,$sql);
 header('Location:dashboard.php');

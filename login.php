@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css">
-    <script src="main.js"></script>
+    <?php include 'linkstyles.php'; ?>
     <style>
         #stud{
         margin-top: 120px;
@@ -28,6 +26,18 @@
     </style>
 </head>
 <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="homepage.html"><i class="far fa-arrow-alt-circle-left "></i> Back</a>
+    </li>
+   
+  </ul>
+
+</nav>
 
     <div class="row">
         <div class="col" id="stud">
@@ -58,6 +68,6 @@
                     </form>
         </div>
     </div>
-    
+    </div>
 </body>
 </html>

@@ -88,11 +88,11 @@
       </script>
       </div>
 
+      <center>
+    <form method="POST" enctype="multipart/form-data" action="postdb.php" class="w-75 text-center">
 
-    <form method="POST" enctype="multipart/form-data" action="postdb.php">
-
-      Latitude :<input type="text" name="latitude" class="form-control" readonly>
-       Longitude:<input type="text" name="longitude" class="form-control" readonly><br>
+      <input type="hidden" name="latitude" class="form-control" readonly>
+       <input type="hidden" name="longitude" class="form-control" readonly><br>
       <div class="form-group">
         <label for="" >Choose the type accommodation </label>
       <select class="form-control" name="acctype">
@@ -106,7 +106,7 @@
       No of Vacancies<br><input type="number" placeholder="How many vacancies are present" name="vacancies" class="form-control">
       <div class="form-group">
       
-      Choose a photo<br> <input type="file" name="filetoupload"><br><br>
+      Choose a photo<br> <input type="file" name="filetoupload" ><br><br>
       Cost<br><input type="number" name="cost" placeholder="Enter the price of the room" class="form-control"><br>
 
       <div class="form-group">
@@ -140,6 +140,7 @@
           <input type="submit" value="Post" class="btn btn-outline-success btn-lg" style="float:right;">
     </div>
     </form> 
+    </center>
 
    
     

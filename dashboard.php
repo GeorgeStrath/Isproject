@@ -46,9 +46,7 @@ $conn=mysqli_connect("localhost","root","","isproject");
                      Tools
                 </a>
                     <div class="dropdown-menu bg-light" >
-                        <a class="dropdown-item" href="postlisting.php">Post</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
+                        <a class="dropdown-item" href="postlisting.php">Post</a>                        
                     </div>
             </li>
 
@@ -81,7 +79,7 @@ if(mysqli_num_rows($result)>0 )
 
       echo "
         
-        <div class='card bg-light'>
+        <div class='card bg-light w-75'>
                 <div class='card-body text-center'>
              <p class='card-text'>
                 <a href='listing.php?title=".$listid."'>            
