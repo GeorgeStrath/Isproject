@@ -21,7 +21,7 @@
     background-repeat: no-repeat;
     width: 1300px;
     height: 680px;
-    filter: brightness(90%);
+    filter: brightness(100%);
    
 }
 
@@ -36,22 +36,22 @@ nav a:hover{
     <div  class="container-fluid" > 
           <div class="row">
                 <div class="col-md-12" id="background">
-                    <nav class="navbar navbar-expand-sm ">
+                    <nav class="navbar navbar-expand-sm fixed-top ">
            <ul class="navbar-nav">
                <li class="nav-item">
-                   <a href="#" class="nav-link" style="color: black;">Home</a>
+                   <a href="#" class="nav-link" style="color: white;">Home</a>
                </li>
                <li class="nav-item">
-                   <a href="#" class="nav-link" style="color: black;">Search</a>
+                   <a href="#" class="nav-link" style="color: white;">Search</a>
                </li>
                <li class="nav-item">
-                   <a href="#" class="nav-link" style="color: black;">View Houses</a>
+                   <a href="#vhouses" class="nav-link" style="color: white;">View Houses</a>
                </li>
                 <li class="nav-item">
-                   <a href="#" class="nav-link" style=" margin-left:900px;"><i class="fa fa-cog fa-spin" style="color: black; font-size: 20px;"></i></a>
+                   <a href="#" class="nav-link" style=" margin-left:900px;"><i class="fa fa-cog fa-spin" style="color: white; font-size: 20px;"></i></a>
                </li>
                <li class="nav-item">
-                   <a href="signout.php" class="nav-link" style="color: black; margin-left:20px ;">Sign Out</a>
+                   <a href="signout.php" class="nav-link" style="color: white; margin-left:20px ;">Sign Out</a>
                </li>
 
 
@@ -78,7 +78,7 @@ nav a:hover{
        </div>
 
 
-       <center><i class="fa fa-angle-double-down" style="color: white; font-size: 100px; margin-top: 180px;"></i></center>
+       <center><i class="fa fa-angle-double-down" style="color: white; font-size: 100px; margin-top: 250px;"></i></center>
                 </div>
             </div>
         
@@ -86,7 +86,7 @@ nav a:hover{
        <br>
        <div class="row">
          <div class="col-md-12">
-           <h1 class="text-center" style="font-family:Britannic; font-style:oblique; ">Choose the right place for you</h1>
+           <h1 class="text-center" style="font-family:Britannic; font-style:oblique; " id="vhouses">Choose the right place for you</h1>
          </div>
        </div>
        
@@ -122,10 +122,56 @@ nav a:hover{
         ?>
 
        
-            <div class="card ">
+            <div class="card " >
               <div class="card-body text-center">
-                <p class="card-text"><img src="<?php echo $row['photo']; ?>" width="250px" class="card-img-top"></p>               
+                <div class="card-text"><img src="<?php echo $row['photo']; ?>" width="250px" class="card-img-top" style="border-radius:7px; "></div>
+                  <div style="font-size:15px; ">Location:<?php echo $row['location']; ?> </div>   
+                  <div style="font-size:15px; ">Vacancies:<?php echo $row['vacancies']; ?> rooms</div>
+                  <div style="font-size:15px; ">Rating:<span style="font-size:10px; "><?php
+
+
+                   $rate=$row['rating'];
+                   if ($rate<=0) {
+                    # code...
+                    echo "<i class='far fa-star'></i>";
+                   }
+                   elseif ($rate<=1) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                   elseif ($rate<=2) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=3) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=4) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=5) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                   
+                   else{
+                    echo "<i class='fas fa-star-half-alt'></i>";
+                   }
+                   ?></span></div>
               </div>
+              <button class="btn btn-outline-info"><a href="details.php?id=<?php echo $row['listid']; ?> " style="text-decoration-line: none;" class="text-dark">View More</a></button>
   
           </div>
         
@@ -144,12 +190,59 @@ nav a:hover{
         ?>
 
        
-            <div class="card ">
+            <div class="card " style=" ">
               <div class="card-body text-center">
-                <p class="card-text"><img src="<?php echo $row['photo']; ?>" width="250px" class="card-img-top"></p>
+                <div class="card-text"><img src="<?php echo $row['photo']; ?>" width="250px"  class="card-img-top"  style="border-radius:7px; "></div>
+                 <div style="font-size:15px; ">Location:<?php echo $row['location']; ?> </div>
+                <div style="font-size:15px; ">Vacancies:<?php echo $row['vacancies']; ?> rooms</div>
+                <div style="font-size:15px; ">Rating:<span style="font-size:10px; "><?php
+
+
+                   $rate=$row['rating'];
+                   if ($rate<=0) {
+                    # code...
+                    echo "<i class='far fa-star'></i>";
+                   }
+                   elseif ($rate<=1) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                   elseif ($rate<=2) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=3) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=4) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=5) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                   
+                   else{
+                    echo "<i class='fas fa-star-half-alt'></i>";
+                   }
+                   ?></span></div>
               </div>
+              <button class="btn btn-outline-info"><a href="details.php?id=<?php echo $row['listid']; ?> " style="text-decoration-line: none;" class="text-dark">View More</a></button>
   
           </div>
+
         
 
       <?php  }}?> 
@@ -167,8 +260,54 @@ nav a:hover{
        >
             <div class="card ">
               <div class="card-body text-center">
-                <p class="card-text"><img src="<?php echo $row['photo']; ?>" width="250px" class="card-img-top"></p>
+                <div class="card-text"><img src="<?php echo $row['photo']; ?>" width="250px" class="card-img-top" style="border-radius:7px; "></div>
+                <div style="font-size:15px; ">Location:<?php echo $row['location']; ?> </div>
+                <div style="font-size:15px; ">Vacancies:<?php echo $row['vacancies']; ?> rooms</div>
+                <div style="font-size:15px; ">Rating:<span style="font-size:10px; "><?php
+
+
+                   $rate=$row['rating'];
+                   if ($rate<=0) {
+                    # code...
+                    echo "<i class='far fa-star'></i>";
+                   }
+                   elseif ($rate<=1) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                   elseif ($rate<=2) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=3) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=4) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                    elseif ($rate<=5) {
+                    # code...
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                    echo "<i class='fas fa-star'></i>";
+                   }
+                   
+                   else{
+                    echo "<i class='fas fa-star-half-alt'></i>";
+                   }
+                   ?></span></div>
               </div>
+              <button class="btn btn-outline-info"><a href="details.php?id=<?php echo $row['listid']; ?> " style="text-decoration-line: none;" class="text-dark">View More</a></button>
   
           </div>
         

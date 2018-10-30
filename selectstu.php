@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    $conn=mysqli_connect('localhost','root','','isproject');
+    include 'connect.php';
 
     $email=$_POST['mail'];
     $pwd=$_POST['pass'];
@@ -18,16 +18,35 @@ if (mysqli_num_rows($result)>0) {
 
         # code...
         $pass=$row['password'];
-        $_SESSION['stuid']=$row['stuid'];
-        echo $row['stuid'].$pwd;
+             
         if (password_verify($pwd,$pass)) {
             # code...
+            $_SESSION['stuid']=$row['stuid'];
+            $_SESSION['val']='true';   
             header('Location:stuhomepage.php');
         }
-        else{
+        elseif(!password_verify($pwd,$pass)){
+            echo "no";
+            header('Location:login.php');
             session_destroy();
-            echo'lol';
+            
         }
+        else{
+            echo "really no";
+            header('Location:login.php');
+            session_destroy();
+            
+        }
+
     }
+     else{
+            echo "string";
+            header('Location:login.php');
+            session_destroy();
+            
+        }
+}
+else{
+    header('Location:login.php');
 }
 

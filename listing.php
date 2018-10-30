@@ -68,7 +68,7 @@
     	<?php
     	echo "
 
-    <form method='POST'  action='updater.php?title=".$id."' enctype='multipart/form-data'>	
+    <form method='POST'  action='updater.php?title=".$id."&photo=".$photo."' enctype='multipart/form-data'>	
     	Accommodation type: <br>
     	<input type='text' placeholder='Enter the accommodation type' class='form-control' name='actype' 
     	value='".$accommodationtype."'>

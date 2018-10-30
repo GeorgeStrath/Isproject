@@ -83,9 +83,10 @@
           infoWindow.open(map);
         }
       </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSb5YDW2rNo4ZNmj5QC44QfIeetujfQgM&callback=initMap">
-      </script>
+       <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSb5YDW2rNo4ZNmj5QC44QfIeetujfQgM&callback=initMap">
+    </script>
+     
       </div>
 
       <center>
