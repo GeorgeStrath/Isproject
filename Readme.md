@@ -1,2 +1,2 @@
-This is my is project repository
+This is my  ISproject repository
 # Isproject
