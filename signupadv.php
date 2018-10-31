@@ -8,10 +8,12 @@ $fname=$_POST['fname'];
 $lname=$_POST['lname'];
 $mail=$_POST['mail'];
 $idnum=$_POST['idnum'];
+$advinfo=$_POST['advinfo'];
+$photo='images/default.png';
 $pwd=$_POST['pwd'];
 $pass=password_hash($pwd,PASSWORD_BCRYPT);
 
-$sql="INSERT INTO  advertiser ( firstname,  lastname,  email,  idno,  password,  certfile) VALUES ('$fname', '$lname', '$mail', '$idnum', '$pass', '$target_file')";
+$sql="INSERT INTO  advertiser ( firstname,  lastname,  email,  idno,  password,  certfile, advinfo, photo) VALUES ('$fname', '$lname', '$mail', '$idnum', '$pass', '$target_file','$advinfo','$photo')";
 
 mysqli_query($conn,$sql);
 if (move_uploaded_file($_FILES['filetoupload']['tmp_name'],$target_file)) {
@@ -22,7 +24,7 @@ if (move_uploaded_file($_FILES['filetoupload']['tmp_name'],$target_file)) {
     $msg="There is a problem";
 }
 
-header('Location:dashboard.php');
+header('Location:login.php');
 
 
 ?>

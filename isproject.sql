@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2018 at 09:54 AM
+-- Generation Time: Oct 31, 2018 at 04:05 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -32,26 +32,29 @@ CREATE TABLE `advertiser` (
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `photo` varchar(255) NOT NULL,
   `idno` int(15) NOT NULL,
   `password` varchar(100) NOT NULL,
   `certfile` varchar(200) NOT NULL,
-  `advid` int(11) NOT NULL
+  `advid` int(11) NOT NULL,
+  `advinfo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `advertiser`
 --
 
-INSERT INTO `advertiser` (`firstname`, `lastname`, `email`, `idno`, `password`, `certfile`, `advid`) VALUES
-('George', 'Mwanix', 'gman', 121, '$2y$10$pahh8hmJ47QXUocMyRu3wOtkzVVjVWhdYF2ogOcnSj8Bo5ayPaj4a', 'advcert/individual report.pdf', 7),
-('Dennis', 'Ngugi', 'dg@mail.com', 12333, '$2y$10$dea6Gccm9RMrjtMMhIsp/.MNtLAcpMepTTZ19pjhaKNDulWye2UN.', 'advcert/Draft Proposal Template.pdf', 8),
-('eddy', 'orina', 'eddyorina@gmail.com', 1234, '$2y$10$gBDx3vHvb9jKG9.QSYudSOR/winN2By6Xg0tvMTVFb2SGuVw86F.S', 'advcert/', 9),
-('wow', 'mow', 'wowmow@mail.wow', 134, '$2y$10$OF5aeyzUsT9ixS1dKvfwDeIrgrR/CMW3h4UwNPAEAnB.kcnYT29Qq', 'advcert/', 10),
-('', '', '', 0, '$2y$10$9Qm93HT7Et0vFQlFMo2ADusAvW.L5KFV9lJ.IUV1umbkK3FaKutM.', 'advcert/', 12),
-('', '', '', 0, '$2y$10$G1/.tyy.fGfA2hOxpx/dB.zX6v.9UnFp3XJxfsxaW96pwOmF7W7DG', 'advcert/', 13),
-('g', 'm', 'k', 54, '$2y$10$TSHkApGuuGwdOXIYbJgb2uNVVqC8Gf/O8woJnCaWeMaH6lWQC9J2W', 'advcert/Blooms Taxonomy Action Verbs.pdf', 14),
-('Dennis', 'Macharia', 'd.m@n', 20000001, '$2y$10$MVhbx9BuBP/tC4PnuOm/1OH/vhnxuQiJ2AMI5eQh9F0KwuJLbXbAG', 'advcert/djwr45ElLcZLNPy6.jpg', 15),
-('Ghost', 'Worker', 'g.w@pubg.com', 1234, '$2y$10$DtMwQv7n3LzQzvrWLJYjSuvJwgLPnWLrw.i81nmRRKjZF6HOOgzDC', 'advcert/0fmCELe2ON8sjuHu.jpg', 16);
+INSERT INTO `advertiser` (`firstname`, `lastname`, `email`, `photo`, `idno`, `password`, `certfile`, `advid`, `advinfo`) VALUES
+('George', 'Mwanix', 'gman', 'images/default.png', 121, '$2y$10$pahh8hmJ47QXUocMyRu3wOtkzVVjVWhdYF2ogOcnSj8Bo5ayPaj4a', 'advcert/individual report.pdf', 7, 'Hi My name is George I am 43 years old and a property owner i various counties i am certified by the kenya property owners to own the properties i have .'),
+('Dennis', 'Ngugi', 'dg@mail.com', '', 12333, '$2y$10$dea6Gccm9RMrjtMMhIsp/.MNtLAcpMepTTZ19pjhaKNDulWye2UN.', 'advcert/Draft Proposal Template.pdf', 8, ''),
+('eddy', 'orina', 'eddyorina@gmail.com', '', 1234, '$2y$10$gBDx3vHvb9jKG9.QSYudSOR/winN2By6Xg0tvMTVFb2SGuVw86F.S', 'advcert/', 9, ''),
+('wow', 'mow', 'wowmow@mail.wow', '', 134, '$2y$10$OF5aeyzUsT9ixS1dKvfwDeIrgrR/CMW3h4UwNPAEAnB.kcnYT29Qq', 'advcert/', 10, ''),
+('', '', '', '', 0, '$2y$10$9Qm93HT7Et0vFQlFMo2ADusAvW.L5KFV9lJ.IUV1umbkK3FaKutM.', 'advcert/', 12, ''),
+('', '', '', '', 0, '$2y$10$G1/.tyy.fGfA2hOxpx/dB.zX6v.9UnFp3XJxfsxaW96pwOmF7W7DG', 'advcert/', 13, ''),
+('g', 'm', 'k', '', 54, '$2y$10$TSHkApGuuGwdOXIYbJgb2uNVVqC8Gf/O8woJnCaWeMaH6lWQC9J2W', 'advcert/Blooms Taxonomy Action Verbs.pdf', 14, ''),
+('Dennis', 'Macharia', 'd.m@n', '', 20000001, '$2y$10$MVhbx9BuBP/tC4PnuOm/1OH/vhnxuQiJ2AMI5eQh9F0KwuJLbXbAG', 'advcert/djwr45ElLcZLNPy6.jpg', 15, ''),
+('Ghost', 'Worker', 'g.w@pubg.com', '', 1234, '$2y$10$DtMwQv7n3LzQzvrWLJYjSuvJwgLPnWLrw.i81nmRRKjZF6HOOgzDC', 'advcert/0fmCELe2ON8sjuHu.jpg', 16, ''),
+('George', 'Mwaniki', 'george.mwaniki@strathmore.edu', 'images/default.png', 123456, '$2y$10$ZBphlR3nHDnB6PabAOnmy.zjQvZte8J.FBmtPe0USkqPNfY4VlYk2', 'advcert/UI 0.PNG', 17, 'Hi My name is George I am 43 years old and a property owner i various counties i am certified by the kenya property owners to own the properties i have .');
 
 -- --------------------------------------------------------
 
@@ -61,9 +64,11 @@ INSERT INTO `advertiser` (`firstname`, `lastname`, `email`, `idno`, `password`, 
 
 CREATE TABLE `listings` (
   `listid` int(100) NOT NULL,
+  `advfirstname` varchar(255) NOT NULL,
+  `advlastname` varchar(255) NOT NULL,
   `accommodationtype` varchar(100) NOT NULL,
   `vacancies` int(100) NOT NULL,
-  `amenities` varchar(100) NOT NULL,
+  `amenities` text NOT NULL,
   `amenitiesincluded` varchar(10) NOT NULL,
   `rating` int(10) NOT NULL,
   `Category` varchar(100) NOT NULL,
@@ -71,20 +76,24 @@ CREATE TABLE `listings` (
   `Advid` int(10) NOT NULL,
   `photo` varchar(200) NOT NULL,
   `location` text NOT NULL,
+  `locationinfo` varchar(60000) NOT NULL,
   `lat` float(10,6) NOT NULL,
-  `lng` float(10,6) NOT NULL
+  `lng` float(10,6) NOT NULL,
+  `extrainfo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `listings`
 --
 
-INSERT INTO `listings` (`listid`, `accommodationtype`, `vacancies`, `amenities`, `amenitiesincluded`, `rating`, `Category`, `cost`, `Advid`, `photo`, `location`, `lat`, `lng`) VALUES
-(2, 'hotel', 100, 'wifi', 'Yes', 0, 'Single', 10, 7, 'listphoto/apa1.jpg', 'Mombasa', -1.310379, 36.817619),
-(3, 'hostel', 100, '            wifi,gym,food', 'No', 1, 'Double', 2000, 7, 'listphoto/apa4.jpg', 'Kisii', -1.307066, 36.808865),
-(4, 'Hostel', 15, '            water only        ', 'Some', 0, 'Quadruple', 100, 7, 'listphoto/apa2.jpg', '          \r\n  Madaraka\r\n        ', -1.309126, 36.812473),
-(5, 'apartment', 1234, '                    food only', 'Some', 0, 'Double', 120, 7, 'listphoto/apa5.jpg', 'Kawangware\r\n  \r\n        ', -1.309094, 36.812492),
-(6, 'Hostel', 110, '  wifi,gym,kitchen,generator          ', 'No', 5, 'Double', 12000, 7, 'listphoto/apa3.jpg', '          \r\n  Githurai\r\n        ', -1.307065, 36.809792);
+INSERT INTO `listings` (`listid`, `advfirstname`, `advlastname`, `accommodationtype`, `vacancies`, `amenities`, `amenitiesincluded`, `rating`, `Category`, `cost`, `Advid`, `photo`, `location`, `locationinfo`, `lat`, `lng`, `extrainfo`) VALUES
+(2, 'George', 'Mwanix', 'hotel', 100, 'wifi', 'Yes', 0, 'Single', 100, 7, 'listphoto/apa1.jpg', 'Mombasa', '', -1.310379, 36.817619, ''),
+(3, 'George', 'Mwanix', 'hostel', 100, '            wifi,gym,food', 'No', 1, 'Double', 2000, 7, 'listphoto/apa4.jpg', 'Kisii', '', -1.307066, 36.808865, ''),
+(4, 'George', 'Mwanix', 'Hostel', 15, '            water only        ', 'Some', 2, 'Quadruple', 100, 7, 'listphoto/apa2.jpg', '          \r\n  Madaraka\r\n        ', '', -1.309126, 36.812473, ''),
+(5, 'George', 'Mwanix', 'apartment', 1234, '                    food only', 'Some', 0, 'Double', 120, 7, 'listphoto/apa5.jpg', 'Kawangware\r\n  \r\n        ', '', -1.309094, 36.812492, ''),
+(6, 'George', 'Mwanix', 'Hostel', 110, '  wifi,gym,kitchen,generator          ', 'No', 5, 'Double', 12000, 7, 'listphoto/apa3.jpg', '          \r\n  Githurai\r\n        ', 'Githurai is a peaceful place with lots of trees and flowers .It is a very good place study with a readily available market to buy all your food. ', -1.307065, 36.809792, ''),
+(8, 'George', 'Mwanix', 'Hostel', 8, '   water,wifi       \r\n  \r\n        ', 'Some', 0, 'Double', 100, 7, 'listphoto/apa4.jpg', '          Near nairobi West Church but at ist avenue \r\n  \r\n        ', '', -1.306882, 36.819633, ''),
+(9, 'George', 'Mwanix', 'Hostel', 10, 'wifi,water,lunch and supper', 'No', 0, 'Double', 10000, 7, 'listphoto/stuhomepage.jpg', 'Jogoo Road', '    \r\n  Jogoo road allows for easy access to the cbd and the various universities in the outskirts \r\n        ', -1.293639, 36.850578, '    Carry packed clothes .\r\n  \r\n        ');
 
 -- --------------------------------------------------------
 
@@ -139,13 +148,13 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `advertiser`
 --
 ALTER TABLE `advertiser`
-  MODIFY `advid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `advid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `listid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `listid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `student`

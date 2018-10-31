@@ -47,9 +47,16 @@ nav a:hover{
                <li class="nav-item">
                    <a href="#vhouses" class="nav-link" style="color: white;">View Houses</a>
                </li>
-                <li class="nav-item">
-                   <a href="#" class="nav-link" style=" margin-left:900px;"><i class="fa fa-cog fa-spin" style="color: white; font-size: 20px;"></i></a>
-               </li>
+                <li class="nav-item dropdown" style=" margin-left:900px;">
+                  <a class="nav-link text-light" href="#" id="navbardrop" data-toggle="dropdown">
+                  <i class="fa fa-cog fa-spin" style="color: white; font-size: 20px;"></i>
+                </a>
+                <div class="dropdown-menu ">
+                  <a class="dropdown-item" href="#">Update profile</a>
+                  <a class="dropdown-item" href="#">Replies</a>
+                  <a class="dropdown-item" href="#">Liked</a>
+                </div>
+              </li>                
                <li class="nav-item">
                    <a href="signout.php" class="nav-link" style="color: white; margin-left:20px ;">Sign Out</a>
                </li>

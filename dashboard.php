@@ -32,7 +32,7 @@ $conn=mysqli_connect("localhost","root","","isproject");
         
    
     <br>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
         <a class="navbar-brand" style="color: gray;">Rental House Tracker </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
            <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,9 @@ $conn=mysqli_connect("localhost","root","","isproject");
                      Tools
                 </a>
                     <div class="dropdown-menu bg-light" >
-                        <a class="dropdown-item" href="postlisting.php">Post</a>                        
+                        <a class="dropdown-item" href="postlisting.php">Add Post</a>
+                        <a class="dropdown-item" href="#">Bookings</a>
+                        <a class="dropdown-item" href="#">My Profile</a>                        
                     </div>
             </li>
 
@@ -59,17 +61,20 @@ $conn=mysqli_connect("localhost","root","","isproject");
         </ul>
       </div>
     </nav><br><br>
-    <h5 class="text-center">Click on any image to update the listings profile</h5>
+    
     <?php 
 
 $advid=$_SESSION['advid'];
 $sql="SELECT * FROM listings WHERE advid='$advid'" ;
 $result=mysqli_query($conn,$sql);
 
- echo "<div class='card-columns'>";
+ 
 
 if(mysqli_num_rows($result)>0 )
-{
+{   
+    echo "<h5 class='text-center'>Click on any image to update the listings profile</h5>
+    <div class='card-columns'>";
+    
     while($rows=mysqli_fetch_assoc($result))
  {
    
@@ -98,13 +103,18 @@ if(mysqli_num_rows($result)>0 )
      
  }
 
+echo "</div>"; 
+ }
+  else{
+        echo "<h3 class='text-center'>Click on tools above and add a post</h3>";
+}       
+    
 
- }       
-    echo "</div>"; 
+
    
 ?>
 
 
-</div>
+    </div>
 </body>
 </html>

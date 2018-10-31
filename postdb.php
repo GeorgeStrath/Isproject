@@ -14,6 +14,8 @@ $cost=$_POST['cost'];
 $roomsize=$_POST['roomsize'];
 $amenities=$_POST['amenities'];
 $billtype=$_POST['billtype'];
+$extrainfo=$_POST['extrainfo'];
+$locationinfo=$_POST['locationinfo'];
 
 $rating=0;
 
@@ -30,7 +32,7 @@ $result=mysqli_query($conn,$query);
 }
 
 
-$sql="INSERT INTO listings(advfirstname,advlastname,accommodationtype, vacancies, amenities,amenitiesincluded , rating, Category, cost, Advid, photo, location, lat, lng) VALUES ('$advfirstname','$advlastname','$acctype','$vacancies','$amenities', '$billtype','$rating','$roomsize','$cost','$advid','$target_file','$location','$latitude','$longitude')";
+$sql="INSERT INTO listings(advfirstname,advlastname,accommodationtype, vacancies, amenities,amenitiesincluded , rating, Category, cost, Advid, photo, location,locationinfo, lat, lng,extrainfo) VALUES ('$advfirstname','$advlastname','$acctype','$vacancies','$amenities', '$billtype','$rating','$roomsize','$cost','$advid','$target_file','$location','$locationinfo','$latitude','$longitude','$extrainfo')";
 
 mysqli_query($conn,$sql);
 header('Location:dashboard.php');

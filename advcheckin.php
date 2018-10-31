@@ -36,7 +36,10 @@
         Email Address :<br> <input type="text" name="mail" placeholder="Enter your email address" class="form-control"><br><br>
         ID Number :<br> <input type="number" name="idnum" placeholder="Enter  your id number" class="form-control" ><br><br>
         Password :<br> <input type="password" name="pwd" placeholder="Enter your password" class="form-control"><br><br>
+        
         Re-type Password :<br> <input type="password" placeholder="Retype your password" name="pass" class="form-control" ><br><br>
+
+        Say something about yourself:<br> <textarea  placeholder="" name="advinfo" class="form-control" ></textarea><br>
         Certificate file : <input type="file" name="filetoupload" id="filetoupload" ><br>
         <input type="submit" style="float:right; margin-right:10px;" class="btn btn-info" value="Sign Up" name="submit"><br><br>
         Already have an account <a href="login.php">Login </a>

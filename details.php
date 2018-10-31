@@ -125,10 +125,10 @@ function initMap() {
  	<div class="col-8" id="loc">
  		<div class="text-center" style="font-size:23px; " id="heading"> Information </div>
  		<div  class="text-center" style="font-size: 20px;">Image.</div><br>
-		<img src="<?php echo $row['photo'];?>" style="margin-left: 300px; border-radius:7px; " width="auto"><br>
+		<img src="<?php echo $row['photo'];?>" style="margin-left: 200px; border-radius:7px; " width="500px"><br>
  		<div id="heading2">Accommodation Type.</div><br>
 		<div id="heading3" class="text-center"><?php echo $row['accommodationtype'];?></div>
-		<div id="heading2">Category.</div><br>
+		<div id="heading2">Room Size.</div><br>
 		<div id="heading3" class="text-center"><?php echo $row['Category'];?> room</div>
 		<div id="heading2">Amenities provided.</div><br>
 		<div id="heading3" class="text-center"><?php echo $row['amenities'];?></div>
@@ -188,16 +188,46 @@ function initMap() {
 </div>
 	<br><br>
 	
+
+ <hr>
+ <div class="row">
+ 	<div class="col-12 text-center"><h2>About the advertiser</h2> </div>
+
+ 	<?php
+ 		$adv=$row['Advid'];
+
+ 		$query="SELECT * FROM advertiser WHERE advid='$adv' ";
+ 		$result=mysqli_query($conn,$query);
+
+ 		if (mysqli_num_rows($result)>0) {
+ 			# code...
+ 			if ($data=mysqli_fetch_assoc($result)) {
+ 				# code...
+ 				
+ 										?>
+
+ 			<div class="row">
+ 				<div class="col-4 text-center" >
+ 					<img src="<?php echo $data['photo'];?>" width="100px" ><br>
+ 					<div>Name:<?php echo $data['firstname'];?><?php echo $data['lastname'];?></div><br>
+ 					<div><?php echo $data['advinfo'];?></div>
+ 				</div>
+ 				<div class="col-4"></div>
+ 				<div class="col-4"></div>
+ 			</div>							
+
+
+ 										<?php
+ 				 			}
+ 		}
+
+ 	?>
+ </div>
+</div>
+
 <?php 
 		}
 	}
  ?>
- <hr>
- <div class="row">
- 	<div class="col-12 text-center"><h2>About the advertiser</h2> </div>
- </div>
-</div>
-<hr>
-
    </body>
 </html>

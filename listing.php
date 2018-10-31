@@ -33,7 +33,7 @@
     <!--  -->
 </head>
 <body>
-	   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+	   <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
         <a class="navbar-brand" href="dashboard.php" style="font-size: 18px; color: gray;">Rental House Tracker </a>
 
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

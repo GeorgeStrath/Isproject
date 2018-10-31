@@ -4,7 +4,7 @@
 	include 'linkstyles.php';
 
 	$location=mysqli_real_escape_string($conn,$_POST['location']);
-	$query="SELECT * FROM listings WHERE location LIKE '%$location%' ORDER BY rating DESC ";
+	$query="SELECT * FROM listings WHERE location LIKE '%$location%' OR locationinfo LIKE '%$location%' ORDER BY rating DESC ";
 
 	$result=mysqli_query($conn,$query);
  ?>
@@ -54,7 +54,7 @@
  				  	 			<p>
  				  	 				<b style="font-size: 19px;">Advertiser:</b><?php echo $row['advfirstname']. $row['advlastname'];?><br>
  				  	 				<b style="font-size: 19px;">Location:</b><?php echo $row['location'];?><br>
- 				  	 			<b style="font-size: 19px;">Room Type:</b><?php echo $row['Category'];?><br>
+ 				  	 			<b style="font-size: 19px;">Room Size:</b><?php echo $row['Category'];?><br>
  				  	 			<b style="font-size: 19px;">Type:</b><?php echo $row['accommodationtype'];?><br>
  				  	 			<b style="font-size: 19px;">Cost:</b><?php echo $row['cost'];?> kshs per month<br>
  				  	 		</p>
