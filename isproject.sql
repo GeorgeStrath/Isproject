@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2018 at 12:17 PM
+-- Generation Time: Nov 01, 2018 at 04:20 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -37,24 +37,27 @@ CREATE TABLE `advertiser` (
   `password` varchar(100) NOT NULL,
   `certfile` varchar(200) NOT NULL,
   `advid` int(11) NOT NULL,
-  `advinfo` text NOT NULL
+  `advinfo` text NOT NULL,
+  `role` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `advertiser`
 --
 
-INSERT INTO `advertiser` (`firstname`, `lastname`, `email`, `photo`, `idno`, `password`, `certfile`, `advid`, `advinfo`) VALUES
-('George', 'Mwanix', 'gman', 'images/default.png', 121, '$2y$10$pahh8hmJ47QXUocMyRu3wOtkzVVjVWhdYF2ogOcnSj8Bo5ayPaj4a', 'advcert/individual report.pdf', 7, 'Hi My name is George I am 43 years old and a property owner i various counties i am certified by the kenya property owners to own the properties i have .'),
-('Dennis', 'Ngugi', 'dg@mail.com', '', 12333, '$2y$10$dea6Gccm9RMrjtMMhIsp/.MNtLAcpMepTTZ19pjhaKNDulWye2UN.', 'advcert/Draft Proposal Template.pdf', 8, ''),
-('eddy', 'orina', 'eddyorina@gmail.com', '', 1234, '$2y$10$gBDx3vHvb9jKG9.QSYudSOR/winN2By6Xg0tvMTVFb2SGuVw86F.S', 'advcert/', 9, ''),
-('wow', 'mow', 'wowmow@mail.wow', '', 134, '$2y$10$OF5aeyzUsT9ixS1dKvfwDeIrgrR/CMW3h4UwNPAEAnB.kcnYT29Qq', 'advcert/', 10, ''),
-('', '', '', '', 0, '$2y$10$9Qm93HT7Et0vFQlFMo2ADusAvW.L5KFV9lJ.IUV1umbkK3FaKutM.', 'advcert/', 12, ''),
-('', '', '', '', 0, '$2y$10$G1/.tyy.fGfA2hOxpx/dB.zX6v.9UnFp3XJxfsxaW96pwOmF7W7DG', 'advcert/', 13, ''),
-('g', 'm', 'k', '', 54, '$2y$10$TSHkApGuuGwdOXIYbJgb2uNVVqC8Gf/O8woJnCaWeMaH6lWQC9J2W', 'advcert/Blooms Taxonomy Action Verbs.pdf', 14, ''),
-('Dennis', 'Macharia', 'd.m@n', '', 20000001, '$2y$10$MVhbx9BuBP/tC4PnuOm/1OH/vhnxuQiJ2AMI5eQh9F0KwuJLbXbAG', 'advcert/djwr45ElLcZLNPy6.jpg', 15, ''),
-('Ghost', 'Worker', 'g.w@pubg.com', '', 1234, '$2y$10$DtMwQv7n3LzQzvrWLJYjSuvJwgLPnWLrw.i81nmRRKjZF6HOOgzDC', 'advcert/0fmCELe2ON8sjuHu.jpg', 16, ''),
-('George', 'Mwaniki', 'george.mwaniki@strathmore.edu', 'images/default.png', 123456, '$2y$10$ZBphlR3nHDnB6PabAOnmy.zjQvZte8J.FBmtPe0USkqPNfY4VlYk2', 'advcert/UI 0.PNG', 17, 'Hi My name is George I am 43 years old and a property owner i various counties i am certified by the kenya property owners to own the properties i have .');
+INSERT INTO `advertiser` (`firstname`, `lastname`, `email`, `photo`, `idno`, `password`, `certfile`, `advid`, `advinfo`, `role`) VALUES
+('Esther', 'Gathenya', 'egathenya@strathmore.edu', '', 100002, '$2y$10$J7meFYomtRikQB7ZARFlbuLwFJ1dWEul1qdoQP.GZRzwKpnYgCCSK', '', 4, '', 'administrator'),
+('George', 'Mwanix', 'gman', 'images/default.png', 121, '$2y$10$pahh8hmJ47QXUocMyRu3wOtkzVVjVWhdYF2ogOcnSj8Bo5ayPaj4a', 'advcert/individual report.pdf', 7, 'Hi My name is George I am 43 years old and a property owner i various counties i am certified by the kenya property owners to own the properties i have .', 'advertiser'),
+('Dennis', 'Ngugi', 'dg@mail.com', '', 12333, '$2y$10$dea6Gccm9RMrjtMMhIsp/.MNtLAcpMepTTZ19pjhaKNDulWye2UN.', 'advcert/Draft Proposal Template.pdf', 8, '', 'advertiser'),
+('eddy', 'orina', 'eddyorina@gmail.com', '', 1234, '$2y$10$gBDx3vHvb9jKG9.QSYudSOR/winN2By6Xg0tvMTVFb2SGuVw86F.S', 'advcert/', 9, '', ''),
+('wow', 'mow', 'wowmow@mail.wow', '', 134, '$2y$10$OF5aeyzUsT9ixS1dKvfwDeIrgrR/CMW3h4UwNPAEAnB.kcnYT29Qq', 'advcert/', 10, '', ''),
+('', '', '', '', 0, '$2y$10$9Qm93HT7Et0vFQlFMo2ADusAvW.L5KFV9lJ.IUV1umbkK3FaKutM.', 'advcert/', 12, '', ''),
+('', '', '', '', 0, '$2y$10$G1/.tyy.fGfA2hOxpx/dB.zX6v.9UnFp3XJxfsxaW96pwOmF7W7DG', 'advcert/', 13, '', ''),
+('g', 'm', 'k', '', 54, '$2y$10$TSHkApGuuGwdOXIYbJgb2uNVVqC8Gf/O8woJnCaWeMaH6lWQC9J2W', 'advcert/Blooms Taxonomy Action Verbs.pdf', 14, '', ''),
+('Dennis', 'Macharia', 'd.m@n', '', 20000001, '$2y$10$MVhbx9BuBP/tC4PnuOm/1OH/vhnxuQiJ2AMI5eQh9F0KwuJLbXbAG', 'advcert/djwr45ElLcZLNPy6.jpg', 15, '', ''),
+('Ghost', 'Worker', 'g.w@pubg.com', '', 1234, '$2y$10$DtMwQv7n3LzQzvrWLJYjSuvJwgLPnWLrw.i81nmRRKjZF6HOOgzDC', 'advcert/0fmCELe2ON8sjuHu.jpg', 16, '', ''),
+('George', 'Mwaniki', 'george.mwaniki@strathmore.edu', 'images/default.png', 123456, '$2y$10$ZBphlR3nHDnB6PabAOnmy.zjQvZte8J.FBmtPe0USkqPNfY4VlYk2', 'advcert/UI 0.PNG', 17, 'Hi My name is George I am 43 years old and a property owner i various counties i am certified by the kenya property owners to own the properties i have .', ''),
+('Kevin', 'Omondi', 'komondi@strathmore.edu', '', 100001, '$2y$10$65EpK9Fs4KVSuAGY30okgeS9se8fA4Wq2jg6UxOi7Mx6iXSyfFkTa', '', 18, '', 'administrator');
 
 -- --------------------------------------------------------
 
@@ -173,15 +176,18 @@ CREATE TABLE `student` (
   `idno` int(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `admissionletter` varchar(200) NOT NULL,
-  `stuid` int(100) NOT NULL
+  `stuid` int(100) NOT NULL,
+  `role` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`firstname`, `lastname`, `email`, `idno`, `password`, `admissionletter`, `stuid`) VALUES
-('gman', 'mang', 'gman', 0, '$2y$10$O1PhTP/sTUlcZiku6PstauJkla2.UfZPsqcqAei6NkdXAj67GaioK', 'stuadle/djwr45ElLcZLNPy6.jpg', 14);
+INSERT INTO `student` (`firstname`, `lastname`, `email`, `idno`, `password`, `admissionletter`, `stuid`, `role`) VALUES
+('gman', 'mang', 'gman', 0, '$2y$10$O1PhTP/sTUlcZiku6PstauJkla2.UfZPsqcqAei6NkdXAj67GaioK', 'stuadle/djwr45ElLcZLNPy6.jpg', 14, 'student'),
+('Esther', 'Gathenya', 'egathenya@strathmore.edu', 100002, '$2y$10$HOfcZF7Yl/xPJDvefjJZTOzb/g.akQupROk56u/xQXF3QOB8zz.36', '', 15, 'administrator'),
+('Kevin', 'Omondi', 'komondi', 100001, '$2y$10$YkHQ7XNvaX9kasoXXxWb1.ZXg9masr7.2wWnb8TpNIWJBXNits1Li', '', 16, 'administrator');
 
 --
 -- Indexes for dumped tables
@@ -237,7 +243,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `advertiser`
 --
 ALTER TABLE `advertiser`
-  MODIFY `advid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `advid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `bookings`
@@ -273,7 +279,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `stuid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `stuid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
