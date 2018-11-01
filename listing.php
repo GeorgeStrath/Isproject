@@ -111,8 +111,7 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div id="home" class="container tab-pane active"><br>
-      <h3>HOME</h3>
+    <div id="home" class="container tab-pane active"><br>      
       <?php
         $advertiser=$_SESSION['advid'];
         $sql="SELECT * FROM bookings WHERE listid='$id' AND  advid=$advertiser ";
@@ -122,7 +121,13 @@
             while ($data=mysqli_fetch_assoc($res)) {
                 # code...
                 echo $data['acceptance'];
+                
+                
             }
+        }
+        elseif(mysqli_num_rows($res)<=0)
+        {
+            echo "<div class='text-center' style='font-size:20px;' >We are running a little dry</div><br><br><br>";
         }
       ?>
     </div>
