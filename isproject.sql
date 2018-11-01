@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2018 at 04:05 PM
+-- Generation Time: Nov 01, 2018 at 12:17 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -59,6 +59,57 @@ INSERT INTO `advertiser` (`firstname`, `lastname`, `email`, `photo`, `idno`, `pa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `bookid` int(11) NOT NULL,
+  `listid` int(100) NOT NULL,
+  `stuid` int(100) NOT NULL,
+  `advid` int(100) NOT NULL,
+  `acceptance` varchar(100) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`bookid`, `listid`, `stuid`, `advid`, `acceptance`, `time`) VALUES
+(6, 6, 14, 7, 'no', '2018-10-31 23:11:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `commentorid` int(11) NOT NULL,
+  `listid` int(11) NOT NULL,
+  `advid` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `role` varchar(100) NOT NULL,
+  `commentid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `contactid` int(11) NOT NULL,
+  `contactorid` int(11) NOT NULL,
+  `contactedid` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `timeline` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `listings`
 --
 
@@ -90,10 +141,24 @@ INSERT INTO `listings` (`listid`, `advfirstname`, `advlastname`, `accommodationt
 (2, 'George', 'Mwanix', 'hotel', 100, 'wifi', 'Yes', 0, 'Single', 100, 7, 'listphoto/apa1.jpg', 'Mombasa', '', -1.310379, 36.817619, ''),
 (3, 'George', 'Mwanix', 'hostel', 100, '            wifi,gym,food', 'No', 1, 'Double', 2000, 7, 'listphoto/apa4.jpg', 'Kisii', '', -1.307066, 36.808865, ''),
 (4, 'George', 'Mwanix', 'Hostel', 15, '            water only        ', 'Some', 2, 'Quadruple', 100, 7, 'listphoto/apa2.jpg', '          \r\n  Madaraka\r\n        ', '', -1.309126, 36.812473, ''),
-(5, 'George', 'Mwanix', 'apartment', 1234, '                    food only', 'Some', 0, 'Double', 120, 7, 'listphoto/apa5.jpg', 'Kawangware\r\n  \r\n        ', '', -1.309094, 36.812492, ''),
+(5, 'George', 'Mwanix', 'apartment', 1234, '                    food only', 'Some', 0, 'Double', 120, 7, 'listphoto/apa4.jpg', 'Kawangware\r\n  \r\n        ', '', -1.309094, 36.812492, ''),
 (6, 'George', 'Mwanix', 'Hostel', 110, '  wifi,gym,kitchen,generator          ', 'No', 5, 'Double', 12000, 7, 'listphoto/apa3.jpg', '          \r\n  Githurai\r\n        ', 'Githurai is a peaceful place with lots of trees and flowers .It is a very good place study with a readily available market to buy all your food. ', -1.307065, 36.809792, ''),
 (8, 'George', 'Mwanix', 'Hostel', 8, '   water,wifi       \r\n  \r\n        ', 'Some', 0, 'Double', 100, 7, 'listphoto/apa4.jpg', '          Near nairobi West Church but at ist avenue \r\n  \r\n        ', '', -1.306882, 36.819633, ''),
 (9, 'George', 'Mwanix', 'Hostel', 10, 'wifi,water,lunch and supper', 'No', 0, 'Double', 10000, 7, 'listphoto/stuhomepage.jpg', 'Jogoo Road', '    \r\n  Jogoo road allows for easy access to the cbd and the various universities in the outskirts \r\n        ', -1.293639, 36.850578, '    Carry packed clothes .\r\n  \r\n        ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rating`
+--
+
+CREATE TABLE `rating` (
+  `Advid` int(11) NOT NULL,
+  `listid` int(11) NOT NULL,
+  `stuid` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `rateid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -129,10 +194,34 @@ ALTER TABLE `advertiser`
   ADD PRIMARY KEY (`advid`);
 
 --
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`bookid`);
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`commentid`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`contactid`);
+
+--
 -- Indexes for table `listings`
 --
 ALTER TABLE `listings`
   ADD PRIMARY KEY (`listid`);
+
+--
+-- Indexes for table `rating`
+--
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`rateid`);
 
 --
 -- Indexes for table `student`
@@ -151,10 +240,34 @@ ALTER TABLE `advertiser`
   MODIFY `advid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `bookid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `commentid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `contactid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
   MODIFY `listid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `rating`
+--
+ALTER TABLE `rating`
+  MODIFY `rateid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student`

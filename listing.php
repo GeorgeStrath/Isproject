@@ -1,6 +1,7 @@
 <?php
  include 'connect.php';
-
+ include 'linkstyles.php';
+ session_start();
  	$id=mysqli_real_escape_string($conn,$_GET['title']);
  	$sql="SELECT * FROM listings WHERE listid='$id' ";
  	$result=mysqli_query($conn,$sql);
@@ -26,13 +27,11 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="jquery-3.3.1.js"></script>
-    <script src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
-    <!--  -->
+	
 </head>
-<body>
+<body>  
+    <div class="container-fluid">
+    
 	   <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
         <a class="navbar-brand" href="dashboard.php" style="font-size: 18px; color: gray;">Rental House Tracker </a>
 
@@ -87,10 +86,60 @@
         <input type='submit' value='Update' class='btn btn-outline-success btn-lg' style='float:right;'>
     </form>
 
-    </div>
+    
     ";
 
     ?>
+    <br><br>
+    </div>
+
+        <div class="text-center" style="font-size: 22px;">Update advertisement information</div>
+        <hr>
+
+    <!-- Nav pills -->
+  <ul class="nav nav-pills text-center nav-fill" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#home">Bookings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu1">Contacts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu2">Comments</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3>HOME</h3>
+      <?php
+        $advertiser=$_SESSION['advid'];
+        $sql="SELECT * FROM bookings WHERE listid='$id' AND  advid=$advertiser ";
+        $res=mysqli_query($conn,$sql);
+        if (mysqli_num_rows($res)>0) {
+            # code...
+            while ($data=mysqli_fetch_assoc($res)) {
+                # code...
+                echo $data['acceptance'];
+            }
+        }
+      ?>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+    
+ 
+
+</div>
+
 </body>
 </html>
 

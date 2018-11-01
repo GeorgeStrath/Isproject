@@ -1,6 +1,7 @@
 <?php 
 	include 'connect.php';
 	include 'linkstyles.php';
+	session_start();
 $id=mysqli_real_escape_string($conn,$_GET['id']);
 
 
@@ -55,6 +56,7 @@ $id=mysqli_real_escape_string($conn,$_GET['id']);
     </style>
   </head>
   <body>
+  	<div class="container-fluid">
      		<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
 
   <!-- Links -->
@@ -71,7 +73,7 @@ $id=mysqli_real_escape_string($conn,$_GET['id']);
 
 </nav>
 <br><br><br><br>
-<div class="container-fluid">
+
 <div class="row" >
 	 <!-- Location Information -->
 	<div class="col-4" id="loc" >
@@ -212,9 +214,45 @@ function initMap() {
  					<div>Name:<?php echo $data['firstname'];?><?php echo $data['lastname'];?></div><br>
  					<div><?php echo $data['advinfo'];?></div>
  				</div>
- 				<div class="col-4"></div>
- 				<div class="col-4"></div>
- 			</div>							
+ 				<div class="col-8">
+ 					<br>
+ 					<?php 
+ 					$stud=$_SESSION['stuid'];
+ 					$task="SELECT * FROM bookings WHERE stuid=$stud AND listid=$id ";
+ 					$res=mysqli_query($conn,$task);
+ 					if (mysqli_num_rows($res)<=0) {
+ 						# code...
+ 						?>
+
+ 					<form method="POST" action="booking.php">
+ 					<input type="hidden" name="stuid" value="<?php echo $_SESSION['stuid'];?>" class="form-control">
+ 					<input type="hidden" name="listid" value="<?php echo $id;?>" class="form-control">
+ 					<input type="hidden" name="advid" value="<?php echo $adv;?>" class="form-control">
+ 						
+ 					<button class="btn btn-outline-info text-center btn-block" type="submit">Book a room</button>
+ 					</form>
+ 						<?php 
+ 					}
+ 					else{
+ 						echo "<div class='text-center bg-info text-dark'>Listing is already booked</div>";
+ 					}
+
+ 					?>
+ 					<br>
+ 					<!-- Button trigger modal -->
+ 					<form method="POST" action="">
+ 						<textarea class="form-control" placeholder="Write your comment here" rows="5"></textarea><br>
+ 					<button type="submit" class="btn btn-primary btn-block">Comment</button>
+ 					</form>
+
+
+
+ 				</div>
+
+ 				</div>
+ 				
+ 			</div>	
+ 			<div class=""></div>					
 
 
  										<?php
@@ -223,7 +261,7 @@ function initMap() {
 
  	?>
  </div>
-</div>
+
 
 <?php 
 		}
